@@ -11,30 +11,31 @@ var CarLot = (function () {
 	  }, 
 	];
 
+return {
+	// function executeThisCodeAfterFileLoaded(){
+	executeThisCodeAfterFileLoaded: function () {
+		console.log("It worked!!!", this.responseText);
+		// console.log("Data Returned: ", Date.now());
+		var data = JSON.parse(this.responseText);
+		console.log("It worked!!!", data);
+		// makeDOM(data);
+	},
 
-function executeThisCodeAfterFileLoaded(){
-	console.log("It worked!!!", this.responseText);
-	// console.log("Data Returned: ", Date.now());
-	var data = JSON.parse(this.responseText);
-	console.log("It worked!!!", data);
-	// makeDOM(data);
-}
+	// function executeThisCodeAfterFileFails(){
+	executeThisCodeAfterFileFails: function () {
+		console.log("Inventory Load Fail : / ");
+	},
 
-function executeThisCodeAfterFileFails(){
-	console.log("Inventory Load Fail : / ");
-}
+		// loadInventory = function (callback) {
+	    loadInventory: function (callback) {
+	console.log("in loadInventory");
+	    var inventoryLoader = new XMLHttpRequest();
 
-
-  // return {
-    loadInventory = function (callback) {
-console.log("in loadInventory");
-    var inventoryLoader = new XMLHttpRequest();
-
-    inventoryLoader.addEventListener("load", executeThisCodeAfterFileLoaded);
-    inventoryLoader.addEventListener("error", executeThisCodeAfterFileFails);
-	inventoryLoader.open("GET", "inventory.json");
-	inventoryLoader.send();
-  };
+	    inventoryLoader.addEventListener("load", executeThisCodeAfterFileLoaded);
+	    inventoryLoader.addEventListener("error", executeThisCodeAfterFileFails);
+		inventoryLoader.open("GET", "inventory.json");
+		inventoryLoader.send();
+	}
 
 // myRequest.addEventListener("load", executeThisCodeAfterFileLoaded);
 // myRequest.addEventListener("error", executeThisCodeAfterFileFails);
@@ -48,7 +49,5 @@ console.log("in loadInventory");
 		return carInventory;
 	};
 
-	return oldCarLot;
-
 })();
-// })(CarLot || {});
+
