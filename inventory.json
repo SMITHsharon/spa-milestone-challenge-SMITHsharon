@@ -1,0 +1,37 @@
+
+{
+  "cars": [
+    {
+      "make": "Honda",
+      "model": "Accord Hybrid",
+      "year": "2015",
+      "price": "21998",
+      "description": "Leather Seats, Sunroof, Rear View Camera, Front Seat Heaters, Cruise Control, Auxiliary Audio Input."
+    }; 
+
+    {
+      "make": "Mini",
+      "model": "Mini Cooper",
+      "year": "2011",
+      "price": "11998",
+      "description": "Convenience Package, Leatherette seats, Cruise Control, Auxiliary Audio Input, Rear Spoiler, Alloy Wheels."
+    }; 
+
+    {
+      "make": "Toyota",
+      "model": "Camry Hybrid",
+      "year": "2011",
+      "price": "14599",
+      "description": "Leather Seats, Sunroof, JBL Sound System, Front Seat Heaters, Cruise Control, Alloy Wheels."
+    };
+
+    {
+      "make": "Toyota",
+      "model": "Prius",
+      "year": "2007",
+      "price": "11599",
+      "description": "Rear View Camera, Cruise Control, Auxiliary Audio Input, Alloy Wheels, Overhead Airbags, Traction Control."
+    }
+
+  ]
+}
