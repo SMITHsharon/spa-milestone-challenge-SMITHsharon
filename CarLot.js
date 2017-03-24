@@ -14,11 +14,9 @@ var CarLot = (function () {
 	return {
 		// function executeThisCodeAfterFileLoaded(){
 		executeThisCodeAfterFileLoaded: function () {
-			console.log("It worked!!!", this.responseText);
-			// console.log("Data Returned: ", Date.now());
+
 			var data = JSON.parse(this.responseText);
-			console.log("It worked!!!", data);
-			// makeDOM(data);
+			console.log("car data object :: ", data);
 		},
 
 		// function executeThisCodeAfterFileFails(){
@@ -42,7 +40,7 @@ var CarLot = (function () {
 			
 			return carInventory;
 		}
-		
+
 	} // CarLot <return>
 
 })();
