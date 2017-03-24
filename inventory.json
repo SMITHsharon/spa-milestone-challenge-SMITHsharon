@@ -7,7 +7,7 @@
       "year": "2015",
       "price": "21998",
       "description": "Leather Seats, Sunroof, Rear View Camera, Front Seat Heaters, Cruise Control, Auxiliary Audio Input."
-    }; 
+    },
 
     {
       "make": "Mini",
@@ -15,7 +15,7 @@
       "year": "2011",
       "price": "11998",
       "description": "Convenience Package, Leatherette seats, Cruise Control, Auxiliary Audio Input, Rear Spoiler, Alloy Wheels."
-    }; 
+    },
 
     {
       "make": "Toyota",
@@ -23,7 +23,7 @@
       "year": "2011",
       "price": "14599",
       "description": "Leather Seats, Sunroof, JBL Sound System, Front Seat Heaters, Cruise Control, Alloy Wheels."
-    };
+    },
 
     {
       "make": "Toyota",
