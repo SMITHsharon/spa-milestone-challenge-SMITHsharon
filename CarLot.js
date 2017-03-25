@@ -18,9 +18,7 @@ var CarLot = (function (oldCarLot) {
 	oldCarLot.executeThisCodeAfterFileLoaded = function() {
 
 		carInventory = JSON.parse(this.responseText);
-// console.log("carInventory :: ", carInventory);
 		oldCarLot.populatePage(carInventory);
-			
 	};
 	
 
@@ -28,7 +26,6 @@ var CarLot = (function (oldCarLot) {
 	// executeThisCodeAfterFileFails: function () {
 	CarLot.executeThisCodeAfterFileFails = function() {
 		console.log("Inventory Load Fail : / ");
-
 	};
 
 
@@ -40,7 +37,6 @@ var CarLot = (function (oldCarLot) {
 		inventoryLoader.addEventListener("error", CarLot.executeThisCodeAfterFileFails);
 		inventoryLoader.open("GET", "inventory.json");
 		inventoryLoader.send();
-
 	};
 
 
@@ -49,6 +45,19 @@ var CarLot = (function (oldCarLot) {
 	CarLot.getCarInventory = function() {
 			
 		return carInventory;
+	};
+
+
+	// function RETURNs <carInventory> array to whatever function calls for it
+	// getCarInventory: function() {
+	CarLot.updateCarDescription = function(carID, carDesc) {
+console.log("changing this car / carID :: ", carID);
+
+		// for (var i=carID; i=carID; i++) {
+			console.log("in for loop");
+			carInventory.cars[carID].description = carDesc;
+		// }
+		oldCarLot.populatePage(carInventory); // rewrite the DOM w the edited description
 	};
 
 	return oldCarLot;

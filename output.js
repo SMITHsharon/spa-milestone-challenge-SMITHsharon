@@ -20,7 +20,8 @@ var inventoryDOM = document.getElementById("outputDOM");
 
 		for (var i=0; i<inventory.cars.length; i++) {
 
-			tableString += `<div id=${i+1} class="carCard col-3">`;
+			// tableString += `<div id=${i+1} class="carCard col-3">`;
+			tableString += `<div class="carCard col-sm-3">`;
 			thisCar = inventory.cars[i];
 
 			tableString += `<p class="carYear">${thisCar.year}</p>`;
@@ -29,7 +30,8 @@ var inventoryDOM = document.getElementById("outputDOM");
 			commaPrice = String(thisCar.price).replace(/(.)(?=(\d{3})+$)/g,'$1,')
 			tableString += `<p class="carPrice">$${commaPrice}</p>`;
 			
-			tableString += `<p class="carDesc">${thisCar.description}</p>`;
+			// id corresponds to Car card's idex in carInventory array
+			tableString += `<p id=${i} class="carDesc">${thisCar.description}</p>`;
 
 			tableString += `</div>`;
 
@@ -51,7 +53,7 @@ var inventoryDOM = document.getElementById("outputDOM");
 	}; // <populatePage>
 
 
-	// function stablishes all the event listeners for the application
+	// function establishes all the event listeners for the application
 	//
 	// From the navbar: <Home>, <Add>, <Delete>, <Current Inventory>
 	//
@@ -62,7 +64,7 @@ var inventoryDOM = document.getElementById("outputDOM");
 	// * and whatever text the user enters in the input field is bound to the 
 	// * <carDesc> info in the Car card
 	oldCarLot.activateEvents = function() {
-console.log("activating Events");
+
 	var homeLink = document.getElementById("homeHRef");
 	var addLink = document.getElementById("addHRef");
 	var deleteLink = document.getElementById("deleteHRef");
@@ -91,8 +93,7 @@ console.log("activating Events");
 			// reset border of last selected car 
 			// to initial state
 			if (selectedCard !== "null") {
-				selectedCard.style.borderWidth="thin";
-				selectedCard.style.backgroundColor="#EBDFDF";
+				oldCarLot.resetCardToInit(selectedCard);
 			}
 
 			// isolate the selected target Car card
@@ -110,8 +111,10 @@ console.log("activating Events");
 
 			// change the border thickness and background color
 			// of the selected card
-			selectedCard.style.borderWidth="thick";
-			selectedCard.style.backgroundColor="#EBC0C0";
+			oldCarLot.changeSelected(selectedCard);
+
+			// make Car description the focus for user edit
+			oldCarLot.editCarDescription(selectedCard.childNodes[3]);
 		});
 
 	};

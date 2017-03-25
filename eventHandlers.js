@@ -1,11 +1,8 @@
 
 var CarLot = (function (oldCarLot) {
 
-
-
   // function handles all the Event Listeners for the application
 	oldCarLot.activateEvents = function() {
-console.log("in activateEvents");
 
 		var homeLink = document.getElementById("homeHRef");
 		var addLink = document.getElementById("addHRef");
