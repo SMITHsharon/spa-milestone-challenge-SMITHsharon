@@ -1,5 +1,21 @@
 
 body {
-	background-color: SeaShell;
-	/*background-color: #CD6155;*/
+	background-color: red;
+	background-color: #90C3D4;
+}
+
+
+#outputDOM {
+	margin: 1% 1% 1% 1%;
+	padding-right: 0;
+}
+
+.carCard {
+	margin: 2% 2% 2% 2%;
+	border: 1px solid black;
+	background-color: #EBDFDF;
+}
+
+.carHead {
+	font-weight: 900;
 }
