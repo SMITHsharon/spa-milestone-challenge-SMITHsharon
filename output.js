@@ -4,53 +4,50 @@ var CarLot = (function (oldCarLot) {
 var inventoryDOM = document.getElementById("outputDOM");
 
 
-	// function loops over the <carInventory> object
-	// array and populates the page 
+	// function loops over the <carInventory> 
+	// object array and populates the page 
 	// (writes the inventory to the DOM)
 	oldCarLot.populatePage = function(inventory) {
 		
-console.log("<output.js> / in populatePage / inventory :: ", inventory);
-console.log("inventory.cars.length :: ", inventory.cars.length);
+		var tableString = `<div id="outputDOM" class="container"><h1>Current Inventory</h1>`;
+		tableString += `<div class="row">`;
+		var thisCar;
+		var commaPrice; // formats the price with comma separator at thousands; eg 99999 = 99,999
 
-	var tableString = `<div id="outputDOM" class="container"><h1>Current Inventory</h1>`;
-	tableString += `<div class="row">`;
-	// var thisRow;
-	var colCounter = 0;
-	// var lastRow = 3;
-	var thisCar;
+		// column counter; tracks when a row has accumulated three columns
+		// then closes the row with a </div> tag and opens a new row
+		var colCounter = 0; 
 
-	for (var i=0; i<inventory.cars.length; i++) {
+		for (var i=0; i<inventory.cars.length; i++) {
 
 			tableString += `<div id="i+1" class="carCard col-3">`;
 			thisCar = inventory.cars[i];
-// console.log("inventory.cars[i] :: ", inventory.cars[i]);
-// console.log("thisCar :: ", thisCar);
 
-			tableString += `<p class="carHead">${thisCar.year} ${thisCar.make} ${thisCar.model}</p>`;
-			tableString += `<p>$${thisCar.price}</p>`;
+			tableString += `<p class="carYear">${thisCar.year}</p>`;
+			tableString += `<p class="makeModel">${thisCar.make} ${thisCar.model}</p>`;
+
+			commaPrice = String(thisCar.price).replace(/(.)(?=(\d{3})+$)/g,'$1,')
+			tableString += `<p class="carPrice">$${commaPrice}</p>`;
+			
 			tableString += `<p class="carDesc">${thisCar.description}</p>`;
 
 			tableString += `</div>`;
 
-console.log("i :: ", i);
-console.log("i%3 :: ", i%3);
 			colCounter += 1;
-			if (colCounter === 3) {
+			if (colCounter === 3) { /// wraps this row
 
 				tableString += `</div>`; // end of row
 				tableString += `<div class="row">`;
 				colCounter = 0;
 			}
 	
+		}; // <i> for loop
 
-		
-	}; // <i> loop
+		tableString += `</div>`;
 
-	tableString += `</div>`;
+		inventoryDOM.innerHTML = tableString;
 
-	inventoryDOM.innerHTML = tableString;
-
-		};
+	}; // <populatePage>
 
 
 

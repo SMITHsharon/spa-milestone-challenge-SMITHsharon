@@ -1,6 +1,6 @@
 
 body {
-	background-color: red;
+	/*background-color: red;*/
 	background-color: #90C3D4;
 }
 
@@ -16,6 +16,21 @@ body {
 	background-color: #EBDFDF;
 }
 
-.carHead {
+.carYear {
 	font-weight: 900;
+	padding-top: 10px;
+}
+
+.makeModel {
+	font-weight: 900;
+	font-size: 1.2em;
+}
+
+.carPrice {
+	font-weight: 900;
+	color: #90C3D4;
+}
+
+.carDesc {
+	font-size: 0.75em;
 }

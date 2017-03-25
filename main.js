@@ -1,6 +1,4 @@
 
-console.log("in main.js");
-
 var inventoryLoaded = false;
 
 // function populatePage (inventory) {

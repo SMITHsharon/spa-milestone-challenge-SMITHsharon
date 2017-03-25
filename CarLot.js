@@ -18,7 +18,7 @@ var CarLot = (function (oldCarLot) {
 	oldCarLot.executeThisCodeAfterFileLoaded = function() {
 
 		carInventory = JSON.parse(this.responseText);
-console.log("carInventory :: ", carInventory);
+// console.log("carInventory :: ", carInventory);
 		oldCarLot.populatePage(carInventory);
 			
 	};
@@ -27,7 +27,7 @@ console.log("carInventory :: ", carInventory);
 	// function executeThisCodeAfterFileFails(){
 	// executeThisCodeAfterFileFails: function () {
 	CarLot.executeThisCodeAfterFileFails = function() {
-console.log("Inventory Load Fail : / ");
+		console.log("Inventory Load Fail : / ");
 
 	};
 
