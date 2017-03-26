@@ -29,7 +29,7 @@ var CarLot = (function (oldCarLot) {
 	};
 
 
-	// XHR Requests
+	// XHR Request
 	CarLot.loadInventory = function() {
 		var inventoryLoader = new XMLHttpRequest();
 
@@ -48,16 +48,10 @@ var CarLot = (function (oldCarLot) {
 	};
 
 
-	// function RETURNs <carInventory> array to whatever function calls for it
-	// getCarInventory: function() {
+	// function writes the edited Car description to <carInventory> object array
 	CarLot.updateCarDescription = function(carID, carDesc) {
-console.log("changing this car / carID :: ", carID);
 
-		// for (var i=carID; i=carID; i++) {
-			console.log("in for loop");
-			carInventory.cars[carID].description = carDesc;
-		// }
-		oldCarLot.populatePage(carInventory); // rewrite the DOM w the edited description
+		carInventory.cars[carID].description = carDesc;
 	};
 
 	return oldCarLot;
