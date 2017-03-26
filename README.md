@@ -1,17 +1,15 @@
 # spa-milestone-challenge
 
-### For the CarMax KnockOff used car lot, this application displays the current inventory available for sale and allows dynamic updates to Car descriptions. 
-
-xxx
+### For the CarMax KnockOff used car lot, this application displays the current inventory available for sale and allows dynamic updates to Car descriptions. The layout is clean and basic, and incorporates the underlying structures that allow for optimizing responsive design. Functionality of the site is implemented through `javascript` `iife`s. 
 
 #### Car Inventory App on Launch
-![Car Inventory App on Launch](...)
+![Car Inventory App on Launch](https://raw.githubusercontent.com/nss-evening-cohort-05/spa-milestone-challenge-SMITHsharon/screens/screens/Car%20Inventory%20App%20on%20Launch%20(1).png)
 
 #### Car Inventory App upon Selecting a Car Card + Editing Car Description
-![Car Inventory App on Select](...)
+![Car Inventory App on Select](https://raw.githubusercontent.com/nss-evening-cohort-05/spa-milestone-challenge-SMITHsharon/screens/screens/Car%20Inventory%20App%20on%20Selecting%20a%20Car%20Card%20(2).png)
 
 #### Car Inventory App Vertical Display
-![Car Inventory App Vertical Display](...)
+![Car Inventory App Vertical Display](https://raw.githubusercontent.com/nss-evening-cohort-05/spa-milestone-challenge-SMITHsharon/screens/screens/Car%20Inventory%20App%20Vertical%20Display%20(3).png)
 
 
 ### Project Specs
