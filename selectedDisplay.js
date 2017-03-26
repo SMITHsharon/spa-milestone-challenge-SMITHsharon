@@ -6,9 +6,8 @@ var CarLot = (function (oldCarLot) {
 	var changedCarChar = document.getElementById("userInput");
 
 	// function changes border thickness and background color 
-	// for the selected car element 
+	// for the selected Car element 
 	oldCarLot.changeSelected = function(thisCard) {
-console.log("in changesSelected / thisCard", thisCard);
 
 		thisCard.style.borderWidth="thick";
 		thisCard.style.backgroundColor="#D8E3E8";
@@ -17,7 +16,7 @@ console.log("in changesSelected / thisCard", thisCard);
 
 
 	// function resets border thickness and background color 
-	// for this car element back to initial values
+	// for this Car element back to initial values
 	oldCarLot.resetCardToInit = function(thisCard) {
 		
 		thisCard.style.borderWidth="thin";
@@ -25,11 +24,10 @@ console.log("in changesSelected / thisCard", thisCard);
 	};
 
 
-	// function displays the Description for the selected Car
+	// function displays the Description for the selected Car element
 	// in the text input field; makes that field the focus allowing 
 	// user to edit; mirrors the text changes in the selected Car card
 	oldCarLot.editCarDescription = function(thisCar) {
-console.log("thisCar.childNodes[3].id", thisCar.childNodes[3].id);
 
 		var thisCarID = thisCar.childNodes[3].id;
 
@@ -42,15 +40,16 @@ console.log("thisCar.childNodes[3].id", thisCar.childNodes[3].id);
     
     		if (e.which === 13) { // the <Enter> key
 
-       			carDescEditField.innerHTML ="Car Description"; // reset placeholder for text input field
+       			carDescEditField.value ="Car Description"; // reset placeholder for text input field
 
        			// write the edited description to <carInventory> array
        			CarLot.updateCarDescription (thisCarID, thisCar.innerHTML);
 
      		} else { // user is editing the Car description for this car
 
-      			thisCar.innerHTML = editCarDesc.value;
-  console.log("thisCarID :: ", thisCarID);
+      			thisCar.childNodes[3].innerHTML = editCarDesc.value;
+  // console.log("thisCarID :: ", thisCarID); // changes are writing (looping) to all prior selected cards ?
+  
      		} // end <else>   
   		}) // end <editCarDesc.addEventListener>
 	} // end <editCarDescription> function>

@@ -8,7 +8,6 @@ var inventoryDOM = document.getElementById("outputDOM");
 	// object array and populates the page 
 	// (writes the inventory to the DOM)
 	oldCarLot.populatePage = function(inventory) {
-console.log("populatingPage");
 		
 		var tableString = `<div id="outputDOM" class="container"><h1>Current Inventory</h1>`;
 		tableString += `<div class="row row-centered">`;

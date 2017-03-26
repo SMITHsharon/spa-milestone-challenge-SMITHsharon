@@ -41,7 +41,10 @@ var CarLot = (function (oldCarLot) {
 			// reset border of last selected car to initial state
 			if (selectedCard !== "null") {
 				oldCarLot.resetCardToInit(selectedCard);
-				selectedCard = "null";
+
+				// selectedCard = "null"; 
+				// attempt to fix the weird looping 
+				// in <editCarDescription> // no effect ?
 			}
 
 			// isolate the selected target Car card
@@ -56,7 +59,7 @@ var CarLot = (function (oldCarLot) {
 				{
 				selectedCard = e.target.parentNode;
 			} else {
-				selectedCard = "null";
+				selectedCard = "null"; // clicked in "dead" area, so no effect
 			};
 
 

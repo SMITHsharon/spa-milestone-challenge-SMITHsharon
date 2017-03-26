@@ -1,15 +1,16 @@
 
-// <CarLot.loadInventory> launches the application by 
-// loading the Car inventory from the JSON file 
+// <CarLot.loadInventory> launches the application 
+// by loading the Car inventory from the JSON file 
 // into the private <carInventory> object array.
 //
 // All other functionality is handled in the iife files:
 // 
 // CarLot.js: 
-//     <loadInventory> XHR request, and supporting functions
-//     <getCarInventory> :: returns the <carInventory> object array to the calling function
+//     <loadInventory>        :: executes XHR request, and supporting functions
+//     <getCarInventory>      :: returns <carInventory> object array to the calling function
 //     <updateCarDescription> :: an incomplete setter function; the only field modified 
-//                               in <carInventory> array for the given Car object is the description field
+//                               in <carInventory> array for the given Car object 
+//                               is the description field
 //
 // eventHandlers.js:
 //     code for all the Event Handlers for the application:
@@ -25,6 +26,8 @@
 // selectedDisplay.js:
 //     <changeSelected>    :: for the selected card, changes the border and background color
 //     <editCarDescription :: for the selected card, allows user to edit the Car description
+//                            === mirrors changes made in the input field
+//                             => description text of the selected Car card 
 //
 // output.js:
 //     <populatePage> :: writes the <carInventory> data to the DOM

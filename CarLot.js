@@ -22,14 +22,12 @@ var CarLot = (function (oldCarLot) {
 	};
 	
 
-	// function executeThisCodeAfterFileFails(){
-	// executeThisCodeAfterFileFails: function () {
 	CarLot.executeThisCodeAfterFileFails = function() {
 		console.log("Inventory Load Fail : / ");
 	};
 
 
-	// XHR Request
+	// executes XHR Request
 	CarLot.loadInventory = function() {
 		var inventoryLoader = new XMLHttpRequest();
 
@@ -41,7 +39,6 @@ var CarLot = (function (oldCarLot) {
 
 
 	// function RETURNs <carInventory> array to whatever function calls for it
-	// getCarInventory: function() {
 	CarLot.getCarInventory = function() {
 			
 		return carInventory;
