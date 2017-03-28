@@ -16,23 +16,24 @@
 #### `html` structure and definitions
 1. The `Bootstrap` grid defines the underlying `html` structure. 
 2. Created a standard `Bootstrap` `navbar`, fixed, at the top of the page, which includes a text input field. 
+3. Changed `Bootstrap`'s `<form></form>` tag pair to `<div>`s to eliminate the side-effect of relaunching the application after the user edits a Car Description. 
 
 #### `css` stylings
-3. Styling Requirements Include: 
+4. Styling Requirements Include: 
 - Each Car card element has a black border.
 - When a Car card is selected, the card's border displays thicker, and the background color of the card changes. 
-4. Custom styling for the Car cards is discretionary, and is clean and minimal. 
+5. Custom styling for the Car cards is discretionary, and is clean and minimal. 
 
-#### functionality implemented in `javascript` 
-5. Initial Car inventory data is defined in the `JSON` file, `inventory.json`.
-6. XHR Request is executed to load the `JSON` file and write the date to the object array, `carInventory`.
-7. javascript function loops over the array and writes the `carInventory` data to the DOM, adhering to Bootstrap's `row` and `column` structure.
+#### functionality implemented in `JavaScript` 
+6. Initial Car inventory data is defined in the `JSON` file, `inventory.json`.
+7. XHR Request is executed to load the `JSON` file and write the date to the object array, `carInventory`.
+8. `JavaScript` function loops over the array and writes the `carInventory` data to the DOM, adhering to `Bootstrap`'s `row` and `column` structure/convention.
 - All of the properties for each car is written to the DOM. 
-8. When a Car card is selected, the selected Car's Description displays in the text input field in the `navbar`, and any changes the user enters are mirrored in the Description displayed in the Car's card. 
-9. When the user hits the `Enter` key, the text input field is restored to its placeholder value, and the changes made to the Car's Description are saved to the `carInventory` array. 
+9. When a Car card is selected, the selected Car's Description displays in the text input field in the `navbar`, and any changes the user enters are mirrored in the Description displayed in the Car's card. 
+10. When the user hits the `Enter` key, the text input field is restored to its placeholder value, and the changes made to the Car's Description are saved to the `carInventory` array. 
 
 #### functionality implemented in `iife`s
-10. There is only one function in `main.js`: `loadInventory()`. 
+11. There is only one function in `main.js`: `loadInventory()`. 
 The code for this function is in CarLot `iife`, and it launches the application. 
 All remaining functionality for the application is implemented in four `iife` files:
 - `CarLot.js`
@@ -42,10 +43,10 @@ All remaining functionality for the application is implemented in four `iife` fi
 
 
 ### Technologies Used
-- html
-- css
-- javascript
-- Bootstrap
+- `html`
+- `css`
+- `JavaScript`
+- `Bootstrap`
 
 
 ### How To View The Screen 
