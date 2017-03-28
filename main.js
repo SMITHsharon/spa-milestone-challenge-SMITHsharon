@@ -20,8 +20,8 @@
 //     <inventoryLink.addEventListener> :: returns an alert
 //     <carCards.addEventListener>      :: activates if user selects a particular card
 //                                         - isolates the selected card
-//                                         - calls <changeSelected> function
-//                                         - calls <editCarDescription> function
+//                                         - calls <changeSelected> function to change card styling
+//                                         - allows user to edit the selected Car description
 //
 // selectedDisplay.js:
 //     <changeSelected>    :: for the selected card, changes the border and background color
@@ -32,7 +32,7 @@
 // output.js:
 //     <populatePage> :: writes the <carInventory> data to the DOM
 //
-
 CarLot.loadInventory();
+
 
 

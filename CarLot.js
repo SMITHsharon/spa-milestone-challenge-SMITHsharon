@@ -1,6 +1,7 @@
 
 var CarLot = (function (oldCarLot) {
 
+
   var carInventory = [
 	  {
 	    make: "",
@@ -29,12 +30,16 @@ var CarLot = (function (oldCarLot) {
 
 	// executes XHR Request
 	CarLot.loadInventory = function() {
+		
 		var inventoryLoader = new XMLHttpRequest();
 
 		inventoryLoader.addEventListener("load", CarLot.executeThisCodeAfterFileLoaded);
 		inventoryLoader.addEventListener("error", CarLot.executeThisCodeAfterFileFails);
 		inventoryLoader.open("GET", "inventory.json");
-		inventoryLoader.send();
+		inventoryLoader.send();	
+
+		CarLot.setLaunched();
+		}
 	};
 
 
@@ -43,7 +48,6 @@ var CarLot = (function (oldCarLot) {
 			
 		return carInventory;
 	};
-
 
 	// function writes the edited Car description to <carInventory> object array
 	CarLot.updateCarDescription = function(carID, carDesc) {

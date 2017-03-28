@@ -9,8 +9,12 @@ var CarLot = (function (oldCarLot) {
 		var deleteLink = document.getElementById("deleteHRef");
 		var inventoryLink = document.getElementById("inventoryHRef");
 
+		var outputCarEdit = document.getElementById("userInput");
+		var userTextEditArea = document.getElementById("userInput");
+		var carDescEdit;
 		var carCards = document.getElementById("outputDOM");
 		var selectedCard = "null";
+
 
 		// From the navbar: <Home>, <Add>, <Delete>, <Current Inventory>
 		homeLink.addEventListener("click", function() {
@@ -41,16 +45,15 @@ var CarLot = (function (oldCarLot) {
 			// reset border of last selected car to initial state
 			if (selectedCard !== "null") {
 				oldCarLot.resetCardToInit(selectedCard);
-
-				// selectedCard = "null"; 
-				// attempt to fix the weird looping 
-				// in <editCarDescription> // no effect ?
 			}
 
 			// isolate the selected target Car card
 			if (e.target.classList.contains("carCard") === true) {
-				selectedCard = e.target;
 
+				selectedCard = e.target;
+				carDescEdit = selectedCard.childNodes[3];
+				e.target.classList.add("selected");
+				e.target.classList.remove("notSelected");
 			} else if 
 				((e.target.classList.contains("carYear") === true) || 
 				(e.target.classList.contains("makeModel") === true) || 
@@ -58,22 +61,39 @@ var CarLot = (function (oldCarLot) {
 				(e.target.classList.contains("carDesc") === true))
 				{
 				selectedCard = e.target.parentNode;
+				carDescEdit = selectedCard.childNodes[3];
+				e.target.parentNode.classList.add("selected");
+				e.target.parentNode.classList.remove("notSelected");
 			} else {
 				selectedCard = "null"; // clicked in "dead" area, so no effect
 			};
 
-
+			// if ((selectedCard.classList.contains("selected")) && (selectedCard !== "null")) {
 			if (selectedCard !== "null") {
 
 				// change the border thickness and background color of selected card
 				oldCarLot.changeSelected(selectedCard);
 
 				// make the Car Description the focus for user to edit
-				oldCarLot.editCarDescription(selectedCard);
-			}
-		});
+				var changeCarChar = document.getElementById("userInput");
+				changeCarChar.focus();
 
-	};
+				outputCarEdit.value = carDescEdit.innerHTML;
+
+				changeCarChar.addEventListener("keyup", function(e) {
+					if (e.which === 13) { // the <Enter> key 
+						userTextEditArea.value = "Car Description"; // reset placeholder for text input field
+					} else {
+						carDescEdit.innerHTML = outputCarEdit.value;
+						CarLot.updateCarDescription (selectedCard.id, outputCarEdit.value);
+						// oldCarLot.populatePage (CarLot.getCarInventory());
+						// oldCarLot.activateEvents();
+					}; // end <else>
+				}); // end <changeCarChar.addEventListener>
+
+			}; // end <if (selectedCard !== null>)
+		}); // end <carCards.addEventListener>
+	}; // end <activateEvents()>
 
 	return oldCarLot;
 
