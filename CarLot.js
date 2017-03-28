@@ -37,9 +37,6 @@ var CarLot = (function (oldCarLot) {
 		inventoryLoader.addEventListener("error", CarLot.executeThisCodeAfterFileFails);
 		inventoryLoader.open("GET", "inventory.json");
 		inventoryLoader.send();	
-
-		CarLot.setLaunched();
-		}
 	};
 
 

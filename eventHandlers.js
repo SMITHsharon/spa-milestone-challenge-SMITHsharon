@@ -83,11 +83,10 @@ var CarLot = (function (oldCarLot) {
 				changeCarChar.addEventListener("keyup", function(e) {
 					if (e.which === 13) { // the <Enter> key 
 						userTextEditArea.value = "Car Description"; // reset placeholder for text input field
+	
 					} else {
 						carDescEdit.innerHTML = outputCarEdit.value;
 						CarLot.updateCarDescription (selectedCard.id, outputCarEdit.value);
-						// oldCarLot.populatePage (CarLot.getCarInventory());
-						// oldCarLot.activateEvents();
 					}; // end <else>
 				}); // end <changeCarChar.addEventListener>
 
