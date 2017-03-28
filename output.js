@@ -20,8 +20,7 @@ var inventoryDOM = document.getElementById("outputDOM");
 
 		for (var i=0; i<inventory.cars.length; i++) {
 
-			// tableString += `<div id=${i+1} class="carCard col-3">`;
-			tableString += `<div id=${i} class="carCard notSelected col-sm-3 col">`;
+			tableString += `<div id=${i} class="carCard col-sm-3 col">`;
 			thisCar = inventory.cars[i];
 
 			tableString += `<p class="carYear">${thisCar.year}</p>`;
@@ -30,7 +29,6 @@ var inventoryDOM = document.getElementById("outputDOM");
 			commaPrice = String(thisCar.price).replace(/(.)(?=(\d{3})+$)/g,'$1,')
 			tableString += `<p class="carPrice">$${commaPrice}</p>`;
 			
-			// id corresponds to Car card's idex in carInventory array
 			tableString += `<p class="carDesc">${thisCar.description}</p>`;
 
 			tableString += `</div>`;
@@ -41,8 +39,7 @@ var inventoryDOM = document.getElementById("outputDOM");
 				tableString += `</div>`; // end of row
 				tableString += `<div class="row">`;
 				colCounter = 0;
-			}
-	
+			} // colCounter <if> 
 		}; // <i> for loop
 
 		tableString += `</div>`;

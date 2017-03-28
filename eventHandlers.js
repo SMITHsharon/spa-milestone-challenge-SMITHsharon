@@ -9,11 +9,12 @@ var CarLot = (function (oldCarLot) {
 		var deleteLink = document.getElementById("deleteHRef");
 		var inventoryLink = document.getElementById("inventoryHRef");
 
+
+		var carCards = document.getElementById("outputDOM");
+		var selectedCard = "null";
 		var outputCarEdit = document.getElementById("userInput");
 		var userTextEditArea = document.getElementById("userInput");
 		var carDescEdit;
-		var carCards = document.getElementById("outputDOM");
-		var selectedCard = "null";
 
 
 		// From the navbar: <Home>, <Add>, <Delete>, <Current Inventory>
@@ -52,8 +53,6 @@ var CarLot = (function (oldCarLot) {
 
 				selectedCard = e.target;
 				carDescEdit = selectedCard.childNodes[3];
-				e.target.classList.add("selected");
-				e.target.classList.remove("notSelected");
 			} else if 
 				((e.target.classList.contains("carYear") === true) || 
 				(e.target.classList.contains("makeModel") === true) || 
@@ -62,13 +61,10 @@ var CarLot = (function (oldCarLot) {
 				{
 				selectedCard = e.target.parentNode;
 				carDescEdit = selectedCard.childNodes[3];
-				e.target.parentNode.classList.add("selected");
-				e.target.parentNode.classList.remove("notSelected");
 			} else {
 				selectedCard = "null"; // clicked in "dead" area, so no effect
 			};
 
-			// if ((selectedCard.classList.contains("selected")) && (selectedCard !== "null")) {
 			if (selectedCard !== "null") {
 
 				// change the border thickness and background color of selected card

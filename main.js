@@ -24,10 +24,8 @@
 //                                         - allows user to edit the selected Car description
 //
 // selectedDisplay.js:
-//     <changeSelected>    :: for the selected card, changes the border and background color
-//     <editCarDescription :: for the selected card, allows user to edit the Car description
-//                            === mirrors changes made in the input field
-//                             => description text of the selected Car card 
+//     <changeSelected>  :: for the selected card, changes the border and background color
+//     <resetCardToInit> :: resets deselected card back to initial state display
 //
 // output.js:
 //     <populatePage> :: writes the <carInventory> data to the DOM
