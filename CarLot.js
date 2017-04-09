@@ -23,31 +23,31 @@ var CarLot = (function (oldCarLot) {
 	};
 	
 
-	CarLot.executeThisCodeAfterFileFails = function() {
+	oldCarLot.executeThisCodeAfterFileFails = function() {
 		console.log("Inventory Load Fail : / ");
 	};
 
 
 	// executes XHR Request
-	CarLot.loadInventory = function() {
+	oldCarLot.loadInventory = function() {
 		
 		var inventoryLoader = new XMLHttpRequest();
 
-		inventoryLoader.addEventListener("load", CarLot.executeThisCodeAfterFileLoaded);
-		inventoryLoader.addEventListener("error", CarLot.executeThisCodeAfterFileFails);
+		inventoryLoader.addEventListener("load", oldCarLot.executeThisCodeAfterFileLoaded);
+		inventoryLoader.addEventListener("error", oldCarLot.executeThisCodeAfterFileFails);
 		inventoryLoader.open("GET", "inventory.json");
 		inventoryLoader.send();	
 	};
 
 
 	// function RETURNs <carInventory> array to whatever function calls for it
-	CarLot.getCarInventory = function() {
+	oldCarLot.getCarInventory = function() {
 			
 		return carInventory;
 	};
 
 	// function writes the edited Car description to <carInventory> object array
-	CarLot.updateCarDescription = function(carID, carDesc) {
+	oldCarLot.updateCarDescription = function(carID, carDesc) {
 
 		carInventory.cars[carID].description = carDesc;
 	};
