@@ -9,7 +9,7 @@ var CarLot = (function (oldCarLot) {
 		thisCard.style.borderWidth="thick";
 		thisCard.style.backgroundColor="#D8E3E8";
 		thisCard.style.color="A38788";
-	};
+	}
 
 
 	// function resets border thickness and background color 
@@ -18,7 +18,7 @@ var CarLot = (function (oldCarLot) {
 		
 		thisCard.style.borderWidth="thin";
 		thisCard.style.backgroundColor="#EBDFDF";
-	};
+	}
 
 	return oldCarLot;
 

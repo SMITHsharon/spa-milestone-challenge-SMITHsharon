@@ -45,7 +45,7 @@ var CarLot = (function (oldCarLot) {
 
 			// reset border of last selected car to initial state
 			if (selectedCard !== "null") {
-				oldCarLot.resetCardToInit(selectedCard);
+				CarLot.resetCardToInit(selectedCard);
 			}
 
 			// isolate the selected target Car card
@@ -68,7 +68,7 @@ var CarLot = (function (oldCarLot) {
 			if (selectedCard !== "null") {
 
 				// change the border thickness and background color of selected card
-				oldCarLot.changeSelected(selectedCard);
+				CarLot.changeSelected(selectedCard);
 
 				// make the Car Description the focus for user to edit
 				var changeCarChar = document.getElementById("userInput");
@@ -88,7 +88,7 @@ var CarLot = (function (oldCarLot) {
 
 			}; // end <if (selectedCard !== null>)
 		}); // end <carCards.addEventListener>
-	}; // end <activateEvents()>
+	} // end <activateEvents()>
 
 	return oldCarLot;
 

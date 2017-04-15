@@ -46,9 +46,9 @@ var inventoryDOM = document.getElementById("outputDOM");
 
 		inventoryDOM.innerHTML = tableString;
 
-		oldCarLot.activateEvents();
+		CarLot.activateEvents();
 
-	}; // <populatePage>
+	} // <populatePage>
 
 	return oldCarLot;
 

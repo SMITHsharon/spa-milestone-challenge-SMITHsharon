@@ -19,13 +19,13 @@ var CarLot = (function (oldCarLot) {
 	oldCarLot.executeThisCodeAfterFileLoaded = function() {
 
 		carInventory = JSON.parse(this.responseText);
-		oldCarLot.populatePage(carInventory);
-	};
+		CarLot.populatePage(carInventory);
+	}
 	
 
 	oldCarLot.executeThisCodeAfterFileFails = function() {
 		console.log("Inventory Load Fail : / ");
-	};
+	}
 
 
 	// executes XHR Request
@@ -37,20 +37,20 @@ var CarLot = (function (oldCarLot) {
 		inventoryLoader.addEventListener("error", oldCarLot.executeThisCodeAfterFileFails);
 		inventoryLoader.open("GET", "inventory.json");
 		inventoryLoader.send();	
-	};
+	}
 
 
 	// function RETURNs <carInventory> array to whatever function calls for it
 	oldCarLot.getCarInventory = function() {
 			
 		return carInventory;
-	};
+	}
 
 	// function writes the edited Car description to <carInventory> object array
 	oldCarLot.updateCarDescription = function(carID, carDesc) {
 
 		carInventory.cars[carID].description = carDesc;
-	};
+	}
 
 	return oldCarLot;
 
